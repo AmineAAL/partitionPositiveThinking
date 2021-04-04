@@ -10,35 +10,35 @@ import java.util.Arrays;
 
 public class PartitionImplTest {
 
-    IPartition service;
+    IPartition librarie;
 
 
     @Before
     public void before_each_test() {
-        service = new PartitionImpl();
+        librarie = new PartitionImpl();
     }
 
 
     @Test
     public void partirion_test() {
-        Assert.assertEquals(3, service.partition(Arrays.asList(1, 2, 3, 4, 5), 2).size());
-        Assert.assertEquals(2, service.partition(Arrays.asList(1, 2, 3, 4, 5), 3).size());
-        Assert.assertEquals(5, service.partition(Arrays.asList(1, 2, 3, 4, 5), 1).size());
-        Assert.assertEquals(1, service.partition(Arrays.asList(1, 2, 3, 4, 5), 100).size());
+        Assert.assertEquals(3, librarie.partition(Arrays.asList(1, 2, 3, 4, 5), 2).size());
+        Assert.assertEquals(2, librarie.partition(Arrays.asList(1, 2, 3, 4, 5), 3).size());
+        Assert.assertEquals(5, librarie.partition(Arrays.asList(1, 2, 3, 4, 5), 1).size());
+        Assert.assertEquals(1, librarie.partition(Arrays.asList(1, 2, 3, 4, 5), 100).size());
     }
 
     @Test(expected = RuntimeException.class)
     public void taille_nulle_partition() {
-        service.partition(Arrays.asList(1, 2, 3, 4, 5), 0);
+        librarie.partition(Arrays.asList(1, 2, 3, 4, 5), 0);
     }
 
     @Test(expected = RuntimeException.class)
     public void liste_vide_partition() {
-        service.partition(Arrays.asList(), 6);
+        librarie.partition(Arrays.asList(), 6);
     }
 
     @Test(expected = RuntimeException.class)
     public void liste_null_partition() {
-        service.partition(null, 6);
+        librarie.partition(null, 6);
     }
 }

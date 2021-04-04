@@ -9,8 +9,8 @@ public class PartitionApp {
 
     public static void main(String[] args) {
         List<Integer> liste = Arrays.asList(1, 2, 3, 4, 5);
-        IPartition service = new PartitionImpl();
-        System.out.println(service.partition(liste, 2));
+        IPartition librairie = new PartitionImpl();
+        System.out.println(librairie.partition(liste, 2));
     }
 
 
